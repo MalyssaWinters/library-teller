@@ -44,10 +44,30 @@ namespace Library
                         //create a book object
                         //populate the book object with a title and length
                         //then add the newly created book to rentedMedia
+                        Book book = new Book();
+                        {
+                            book.Title = "Harry Potter and the Chamber of Secrets";
+                            book.Length = "687 pages";
+                        }
                     }
                     //complete for the DVD and Magazine media types
-                        //implement
-                    
+                    //implement
+                    if (type.Equals("DVD"))
+                    {
+                        DVD dvd = new DVD();
+                        {
+                            dvd.Title = "Harry Potter and the Chamber of Secrets";
+                            dvd.Length = "1 hr 52 min";
+                        }
+                    }
+                    if (type.Equals("Magazine"))
+                    {
+                        Magazine magazine = new Magazine();
+                        {
+                            magazine.Title = "Cosmopolitan";
+                            magazine.Length = "42 pages";
+                        }
+                    }
                 }
             }
 
