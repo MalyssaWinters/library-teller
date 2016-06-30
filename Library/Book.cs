@@ -27,7 +27,7 @@ namespace Library
 
         public override DateTime ReturnDueDate()
         {
-            throw new NotImplementedException();
+            return RentedDate.AddDays(RentalLength);
         }
     }
 }
