@@ -10,6 +10,7 @@ namespace Library
     {
         public virtual string Title { get;  set; }
         public virtual string Length { get;  set; }
+        //abstract means Book, Magainze and DVD all need to have a RentalLength
         public abstract int RentalLength { get; set; }
         protected DateTime RentedDate { get;  set; }
     
