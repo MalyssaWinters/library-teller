@@ -49,6 +49,8 @@ namespace Library
                             book.Title = "Harry Potter and the Chamber of Secrets";
                             book.Length = "687 pages";
                         }
+                        rentedMedia.Add(book);
+
                     }
                     //complete for the DVD and Magazine media types
                     //implement
@@ -59,6 +61,7 @@ namespace Library
                             dvd.Title = "Harry Potter and the Chamber of Secrets";
                             dvd.Length = "1 hr 52 min";
                         }
+                        rentedMedia.Add(dvd);
                     }
                     if (type.Equals("Magazine"))
                     {
@@ -67,6 +70,7 @@ namespace Library
                             magazine.Title = "Cosmopolitan";
                             magazine.Length = "42 pages";
                         }
+                        rentedMedia.Add(magazine);
                     }
                 }
             }
@@ -75,7 +79,8 @@ namespace Library
             foreach (Media mediaItem in rentedMedia)
             {
                 //for each mediaItem call PrintMediaDetails()
-                    //implement
+                //implement
+                mediaItem.PrintMediaDetails();
             }
 
             //halt the program so we can read the output
