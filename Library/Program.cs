@@ -11,15 +11,12 @@ namespace Library
     {
         static void Main(string[] args)
         {
-            //set the rental dates for each type via a static field
-                //implement
-
             //create a list a propulate it with the date in our file
             FileIO getFile = new FileIO();
 
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
             //implement
-            List<string> mediaToRent = new List<string>();
+            List<string> mediaToRent = getFile.ReturnMediaFile(@"..\..\Media.txt");
             
             //create a new list for us to use to store our media objects to rent
             List<Media> rentedMedia = new List<Media>();
@@ -41,35 +38,27 @@ namespace Library
                     //using the components we got figure out which type of object we should create and insert
                     if (type.Equals("Book"))
                     {
-                        //create a book object
-                        //populate the book object with a title and length
-                        //then add the newly created book to rentedMedia
+                        //create a book, dvd and magazine object
+                        //populate the object with a title and length
+                        //then add the newly created object to rentedMedia
+                        //implement
                         Book book = new Book();
-                        {
-                            book.Title = "Harry Potter and the Chamber of Secrets";
-                            book.Length = "687 pages";
-                        }
+                        book.Title = title;
+                        book.Length = length;
                         rentedMedia.Add(book);
-
                     }
-                    //complete for the DVD and Magazine media types
-                    //implement
                     if (type.Equals("DVD"))
                     {
                         DVD dvd = new DVD();
-                        {
-                            dvd.Title = "Harry Potter and the Chamber of Secrets";
-                            dvd.Length = "1 hr 52 min";
-                        }
+                        dvd.Title = title;
+                        dvd.Length = length;
                         rentedMedia.Add(dvd);
                     }
                     if (type.Equals("Magazine"))
                     {
                         Magazine magazine = new Magazine();
-                        {
-                            magazine.Title = "Cosmopolitan";
-                            magazine.Length = "42 pages";
-                        }
+                        magazine.Title = title;
+                        magazine.Length = length;
                         rentedMedia.Add(magazine);
                     }
                 }

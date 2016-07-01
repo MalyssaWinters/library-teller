@@ -27,7 +27,9 @@ namespace Library
                 {
                     //throw appropriate exepction
                     //implement
-                    throw new Exception("File not found.");
+                    throw new FileNotFoundException();
+                    //could also write
+                    //throw new FileNotFoundException("File not found", path);
                 }
 
                 //initialize the empty string we'll be using for each line
@@ -37,25 +39,20 @@ namespace Library
                 //implement
                 using (StreamReader reader = new StreamReader(path))
                 {
-                    line = reader.ReadLine();
-                }
-                Console.WriteLine(line);
+                    //while reading a new from file, add each line to mediaFile
+                    //as long as each new line is not null
+                    //implement  
+                    line = reader.ReadLine(); //getting the FIRST line
 
-                //while reading a new from file, add each line to mediaFile
-                //as long as each new line is not null
-                //implement            
-                int count = 0;
-
-                //reads the files and displays it line by line
-                System.IO.StreamReader file =
-                new System.IO.StreamReader(@"C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\library-teller\Library\Media.txt");
-                while ((line = file.ReadLine()) != null)
-                {
-                    Console.WriteLine(line);
-                    count++;
+                    //reads the files and displays it line by line
+                    while (line != null)
+                    {
+                        mediaFile.Add(line);
+                        line = reader.ReadLine(); //getting the NEXT line
+                    }
                 }
                 //close your file
-                file.Close();
+                //file.Close(); //do not need to use because "using" will close after it is used
                                                 
             }
             catch (FileNotFoundException)
@@ -68,7 +65,8 @@ namespace Library
             {
                 //write out the message of e
                 //implement
-                Console.WriteLine("An unknown error occured.");            }
+                Console.WriteLine(e.Message); //will just show message
+            }
 
             return mediaFile;
         }
