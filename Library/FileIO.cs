@@ -32,6 +32,10 @@ namespace Library
                     //throw new FileNotFoundException("File not found", path);
                 }
 
+                //instead of doing below code with Streamreader, you could have done:
+                //return File.ReadAllLines(path).ToList();
+                //this reads all lines and then closes 
+
                 //initialize the empty string we'll be using for each line
                 string line;
 
